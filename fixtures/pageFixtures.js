@@ -12,6 +12,7 @@ export const test = base.extend({
     },
     dashboardPage: async ({ page }, use) => {
         await use(new DashBoard(page))
+        
     },
     loggedIn: async ({ loginPage, page }, use) => {
         await loginPage.navigate('/web/index.php/auth/login');
