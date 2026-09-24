@@ -1,0 +1,38 @@
+[
+  {
+    "scenario": "Valid Login",
+    "username": "standard_user",
+    "password": "secret123",
+    "expected": "dashboard"
+  },
+  {
+    "scenario": "Invalid Username",
+    "username": "invalid_user",
+    "password": "secret123",
+    "expected": "Invalid"
+  },
+  {
+    "scenario": "Invalid Password",
+    "username": "standard_user",
+    "password": "wrong123",
+    "expected": "Invalid"
+  },
+  {
+    "scenario": "Empty Username",
+    "username": "",
+    "password": "secret123",
+    "expected": "required"
+  },
+  {
+    "scenario": "Empty Password",
+    "username": "standard_user",
+    "password": "",
+    "expected": "required"
+  },
+  {
+    "scenario": "Empty Username and Password",
+    "username": "",
+    "password": "",
+    "expected": "required"
+  }
+]
