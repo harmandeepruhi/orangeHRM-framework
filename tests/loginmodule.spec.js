@@ -13,7 +13,7 @@ test.describe('data driven approach',()=>{
         if(data.expected){
             expect(await loginPage.checkLogo()).toBeTruthy()
         }else{
-            expect(await loginPage.getErrorMessage()).toContain(data.expected)
+            expect(await  loginPage.getErrorMessage()).toContain(data.expected)
         }
     })
 }
