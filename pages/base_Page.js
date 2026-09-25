@@ -4,7 +4,11 @@ export class basePage{
 
     }
     async goto(path){
-        await this.page.goto(path, { waitUntil: 'domcontentloaded', timeout: 60000 })
+        const url = /^https?:\/\//i.test(path)
+            ? path
+            : new URL(path, 'https://opensource-demo.orangehrmlive.com').toString();
+
+        await this.page.goto(url, { waitUntil: 'load', timeout: 60000 });
     }
     async click(selector){
         await selector.waitFor({state:'visible'})

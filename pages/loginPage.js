@@ -5,8 +5,8 @@ export class LoginPage extends basePage {
         super(page);
         this.usernameInput = page.getByPlaceholder('Username');
         this.passwordInput = page.getByPlaceholder('Password');
-        this.loginbutton = page.getByRole('button', { name: ' Login ' })
-        this.errorMessage = page.getByRole('alert', { name: 'Invalid credentials' })
+        this.loginbutton = page.getByRole('button', { name: /^Login$/i });
+        this.errorMessage = page.getByText(/Invalid credentials/i);
         this.checklogo = page.getByRole('img', { name: 'orangehrm-logo' });
     }
 
