@@ -18,7 +18,10 @@ export class AddEmployee extends basePage{
         await this.fill(this.firstNameInput, firstname);
         await this.fill(this.lastNameInput, lastname);
         await this.click(this.submitButton);
-        await this.page.waitForURL(/\/pim\/viewPersonalDetails\/empNumber\/\d+/);
+        await this.page.waitForURL(/\/pim\/viewPersonalDetails\/empNumber\/\d+/, {
+            waitUntil: 'domcontentloaded',
+            timeout: 30000,
+        });
 
     }
     async isEmployeeAdded(){
